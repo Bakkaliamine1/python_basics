@@ -1,0 +1,206 @@
+first_name = 'Amine'
+last_name = 'Bakkali'
+print('Hello ' + first_name + ' ' + last_name)
+
+---> Hello Amine Bakkali
+
+___________________________________________________________________________
+___________________________________________________________________________
+
+# This is a comment
+
+___________________________________________________________________________
+___________________________________________________________________________  1. String Concept
+
+
+sentence = ' my name is amine'
+print(sentence.upper())  --->  MY NAME IS AMINE
+print(sentence.lower())  ---> my name is amine
+print(sentence.count('a')) --->  2
+
+___________________________________________________________________________
+___________________________________________________________________________  Demo - String 
+
+
+first_name = input('please enter you first name : ')     # for example Amine
+last_name = input('please enter you last name : ')     # for example Bakkali
+print('Hello, ' + first_name +' '+ last_name)
+
+---> Hello, Amine Bakkali
+
+___________________________________________________________________________
+___________________________________________________________________________  Formating String
+
+
+first_name = 'Amine'
+last_name = 'Bakkali'
+output = 'Hello, ' + first_name +' '+ last_name
+print(output)
+
+---> Hello, Amine Bakkali
+
+___________________________________________________________________________
+___________________________________________________________________________
+
+
+first_name = 'Amine'
+last_name = 'Bakkali'
+output = 'Hello, {} {}'.format(first_name, last_name)
+print(output)
+
+---> Hello,  Amine Bakkali
+
+////////////////////////////////////////////////////////////////////////////
+
+first_name = 'Amine'
+last_name = 'Bakkali'
+output = 'Hello, {1} {0} '.format(first_name, last_name)
+print(output)
+
+---> Hello,  Bakkali Amine
+
+////////////////////////////////////////////////////////////////////////////
+
+first_name = 'Amine'
+last_name = 'Bakkali'
+output = 'Hello, {1}, {0} '.format(first_name, last_name)
+print(output)
+
+---> Hello,  Bakkali, Amine
+
+////////////////////////////////////////////////////////////////////////////
+
+first_name = 'Amine'
+last_name = 'Bakkali'
+output = f'Hello, {first_name} {last_name}'
+print(output)
+
+---> Hello,  Amine Bakkali
+
+////////////////////////////////////////////////////////////////////////////
+
+first_name = input('please enter you first name : ')   # for example Amine
+last_name = input('please enter you last name : ')   # for example Bakkali
+output = f'Hello, {first_name} {last_name}'
+print(output)
+
+---> Hello,  Amine Bakkali
+
+___________________________________________________________________________
+___________________________________________________________________________  3. Numeric Data Types
+
+
+first_num = 6
+second_num = 2
+print(first_num + second_num)    #  Addition
+print(first_num - second_num)    # Substraction
+print(first_num * second_num)   # Multiplication
+print(first_num / second_num)   # Division
+print(first_num ** second_num)  #  Exponent
+
+---> 8
+---> 4
+---> 12
+---> 3.0
+---> 36
+
+////////////////////////////////////////////////////////////////////////////
+
+day_in_feb = 28
+print(str(day_in_feb) + ' Days in february')
+
+---> 28 Days in february
+
+////////////////////////////////////////////////////////////////////////////
+
+first_num = '6'
+second_num = '2'
+print(first_num + second_num)
+
+---> 62
+
+////////////////////////////////////////////////////////////////////////////
+
+first_num = input('enter first number : ')      # for example 6
+second_num = input('enter second number : ')    # for example 2
+print(first_num + second_num)
+
+---> 62
+
+////////////////////////////////////////////////////////////////////////////
+
+first_num = input('enter first number : ')      # for example 6 
+second_num = input('enter second number : ')     # for example 2
+print(int(first_num) + int(second_num))
+
+---> 8
+
+////////////////////////////////////////////////////////////////////////////
+
+first_num = input('enter first number : ')      # for example 6 
+second_num = input('enter second number : ')     # for example 2
+print(float(first_num) + float(second_num))
+
+---> 8.0
+
+___________________________________________________________________________
+___________________________________________________________________________  4. Dates
+
+
+# to get current date and time 
+# we need to use the datetime library
+
+from datetime import datetime
+
+current_date = datetime.now()
+
+# the now functin return a datetime object
+
+print('today is : ' + str(current_date))
+
+---> today is : 2020-05-29 15:39:28.550058
+
+////////////////////////////////////////////////////////////////////////////
+
+from datetime import datetime, timedelta
+
+today = datetime.now()
+print('Today is : ' + str(today))
+
+# timedelta is used to define a period of time 
+
+one_day = timedelta(days=1)
+yesterday = today - one_day
+print('Yesterday was : ' + str(yesterday))
+
+---> Yesterday was : 2020-05-28 15:53:11.237585
+
+////////////////////////////////////////////////////////////////////////////
+
+from datetime import datetime
+
+current_date = datetime.now()
+print('Day : ' + str(current_date.day))
+print('Month : ' + str(current_date.month))
+print('Year : ' + str(current_date.year))
+
+---> Day : 29
+---> Month : 5
+---> Year : 2020
+
+////////////////////////////////////////////////////////////////////////////
+
+from datetime import datetime
+
+birthday = input('When is your birthday (dd/mm/yyyy) ?')   # for example 22/11/1998
+
+birthday_date = datetime.strptime(birthday, '%d/%m/%Y')
+
+print('Birthday : ' + str(birthday_date))
+
+---> Birthday : 1998-11-22 00:00:00
+
+___________________________________________________________________________
+___________________________________________________________________________  5. Error Handling
+
+
