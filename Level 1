@@ -2,6 +2,7 @@ first_name = 'Amine'
 last_name = 'Bakkali'
 print('Hello ' + first_name + ' ' + last_name)
 
+
 ---> Hello Amine Bakkali
 
 ___________________________________________________________________________
@@ -26,6 +27,7 @@ first_name = input('please enter you first name : ')     # for example Amine
 last_name = input('please enter you last name : ')     # for example Bakkali
 print('Hello, ' + first_name +' '+ last_name)
 
+
 ---> Hello, Amine Bakkali
 
 ___________________________________________________________________________
@@ -36,6 +38,7 @@ first_name = 'Amine'
 last_name = 'Bakkali'
 output = 'Hello, ' + first_name +' '+ last_name
 print(output)
+
 
 ---> Hello, Amine Bakkali
 
@@ -48,6 +51,7 @@ last_name = 'Bakkali'
 output = 'Hello, {} {}'.format(first_name, last_name)
 print(output)
 
+
 ---> Hello,  Amine Bakkali
 
 ////////////////////////////////////////////////////////////////////////////
@@ -56,6 +60,7 @@ first_name = 'Amine'
 last_name = 'Bakkali'
 output = 'Hello, {1} {0} '.format(first_name, last_name)
 print(output)
+
 
 ---> Hello,  Bakkali Amine
 
@@ -66,6 +71,7 @@ last_name = 'Bakkali'
 output = 'Hello, {1}, {0} '.format(first_name, last_name)
 print(output)
 
+
 ---> Hello,  Bakkali, Amine
 
 ////////////////////////////////////////////////////////////////////////////
@@ -75,6 +81,7 @@ last_name = 'Bakkali'
 output = f'Hello, {first_name} {last_name}'
 print(output)
 
+
 ---> Hello,  Amine Bakkali
 
 ////////////////////////////////////////////////////////////////////////////
@@ -83,6 +90,7 @@ first_name = input('please enter you first name : ')   # for example Amine
 last_name = input('please enter you last name : ')   # for example Bakkali
 output = f'Hello, {first_name} {last_name}'
 print(output)
+
 
 ---> Hello,  Amine Bakkali
 
@@ -98,6 +106,7 @@ print(first_num * second_num)   # Multiplication
 print(first_num / second_num)   # Division
 print(first_num ** second_num)  #  Exponent
 
+
 ---> 8
 ---> 4
 ---> 12
@@ -109,6 +118,7 @@ print(first_num ** second_num)  #  Exponent
 day_in_feb = 28
 print(str(day_in_feb) + ' Days in february')
 
+
 ---> 28 Days in february
 
 ////////////////////////////////////////////////////////////////////////////
@@ -116,6 +126,7 @@ print(str(day_in_feb) + ' Days in february')
 first_num = '6'
 second_num = '2'
 print(first_num + second_num)
+
 
 ---> 62
 
@@ -125,6 +136,7 @@ first_num = input('enter first number : ')      # for example 6
 second_num = input('enter second number : ')    # for example 2
 print(first_num + second_num)
 
+
 ---> 62
 
 ////////////////////////////////////////////////////////////////////////////
@@ -133,6 +145,7 @@ first_num = input('enter first number : ')      # for example 6
 second_num = input('enter second number : ')     # for example 2
 print(int(first_num) + int(second_num))
 
+
 ---> 8
 
 ////////////////////////////////////////////////////////////////////////////
@@ -140,6 +153,7 @@ print(int(first_num) + int(second_num))
 first_num = input('enter first number : ')      # for example 6 
 second_num = input('enter second number : ')     # for example 2
 print(float(first_num) + float(second_num))
+
 
 ---> 8.0
 
@@ -158,6 +172,7 @@ current_date = datetime.now()
 
 print('today is : ' + str(current_date))
 
+
 ---> today is : 2020-05-29 15:39:28.550058
 
 ////////////////////////////////////////////////////////////////////////////
@@ -173,6 +188,7 @@ one_day = timedelta(days=1)
 yesterday = today - one_day
 print('Yesterday was : ' + str(yesterday))
 
+
 ---> Yesterday was : 2020-05-28 15:53:11.237585
 
 ////////////////////////////////////////////////////////////////////////////
@@ -183,6 +199,7 @@ current_date = datetime.now()
 print('Day : ' + str(current_date.day))
 print('Month : ' + str(current_date.month))
 print('Year : ' + str(current_date.year))
+
 
 ---> Day : 29
 ---> Month : 5
@@ -198,6 +215,7 @@ birthday_date = datetime.strptime(birthday, '%d/%m/%Y')
 
 print('Birthday : ' + str(birthday_date))
 
+
 ---> Birthday : 1998-11-22 00:00:00
 
 ___________________________________________________________________________
@@ -210,6 +228,7 @@ y = 200
 if x = y
 print('Success')
 
+
 ---> SyntaxError: invalid syntax
 
 ////////////////////////////////////////////////////////////////////////////
@@ -218,6 +237,7 @@ print('Success')
 x = 42
 y = 0
 print(x / y)
+
 
 ---> ZeroDivisionError: division by zero
 
@@ -237,6 +257,7 @@ finally:
   print('This is our cleanup code')
 print()
 
+
 ---> Not allowed to devise by zero
 ---> This is our cleanup code
 
@@ -251,4 +272,81 @@ else:                      |  <=  |  Less than or equal to
     print(tax)             |  !=  |  is not equal to
     
 ////////////////////////////////////////////////////////////////////////////
+
+country = 'CANADA'
+if country == 'canada':
+  print('Oh look a canadian')    <-- String comparisons are case sensitive
+else:
+  print('you are not from Canada')
+
+
+---> you are not from Canada
+
+////////////////////////////////////////////////////////////////////////////
+
+country = 'CANADA'
+if country.lower() == 'canada':
+  print('Oh look a canadian')    
+else:
+  print('you are not from Canada')
+  
+  
+---> Oh look a canadian
+
+////////////////////////////////////////////////////////////////////////////
+
+price  = input('How much did you pay ? :')
+price = float(price)
+if price >= 1.00:
+    tax = .07
+    print('Tax rate is : ' + str(tax))
+
+
+---> How much did you pay ? : #for example 40
+---> Tax rate is : 0.07
+
+////////////////////////////////////////////////////////////////////////////
+
+price  = input('How much did you pay ? :')
+price = float(price)
+if price >= 1.00:
+    tax = .07                                                      
+    print('Tax rate is : ' + str(tax))
+else:
+    tax = 0
+    print('Tax rate is : ' + str(tax))
+
+
+---> How much did you pay ? : #for example .50
+---> Tax rate is : 0
+
+////////////////////////////////////////////////////////////////////////////
+
+price  = input('How much did you pay ? :')
+price = float(price)
+if price >= 1.00:
+    tax = .07                                                      
+else:
+    tax = 0
+print('Tax rate is : ' + str(tax))
+
+
+---> How much did you pay ? : #for example 40
+---> Tax rate is : .07
+---> How much did you pay ? : #for example .50
+---> Tax rate is : 0
+
+////////////////////////////////////////////////////////////////////////////
+
+country = input('Enter the name of home country : ')
+if country == 'canada':
+  print('So you must like hocky!')
+else:
+  print('You are not from canada')
+  
+  
+---> Enter the name of home country : #for example canada
+---> So you must like hocky!
+---> Enter the name of home country : #for example Morocco
+---> You are not from canada
 
