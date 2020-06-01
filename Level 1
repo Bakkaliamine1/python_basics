@@ -350,3 +350,341 @@ else:
 ---> Enter the name of home country : #for example Morocco
 ---> You are not from canada
 
+___________________________________________________________________________
+___________________________________________________________________________  7. Handling multiple conditions
+
+- Calculate Canadian sales tax 
+  * if the province is Alberta or Nunavut charge 5%
+  * if the province is Ontario charge 13%
+
+1.
+
+if province == 'Alberta':
+  tax = 0.05
+if province == 'Nunavut':
+  tax = 0.05
+if province == 'Ontario':
+  tax = 0.13
+  
+2.
+
+if province == 'Alberta':
+  tax = 0.05
+elif province == 'Nunavut':
+  tax = 0.05
+elif province == 'Ontario':
+  tax = 0.13
+  
+////////////////////////////////////////////////////////////////////////////
+
+- Calculate Canadian sales tax 
+  * if the province is Alberta or Nunavut charge 5%
+  * if the province is Ontario charge 13%
+  * for all other provinces charge 15%
+ 
+ 
+if province == 'Alberta':
+  tax = 0.05
+elif province == 'Nunavut':
+  tax = 0.05
+elif province == 'Ontario':
+  tax = 0.13
+else:
+  tax = 0.15
+  
+////////////////////////////////////////////////////////////////////////////
+
+- Calculate Canadian sales tax 
+  * if the province is Alberta or Nunavut charge 5%
+  * if the province is Ontario charge 13%
+  * for all other provinces charge 15%
+  
+                                     
+if province == 'Alberta' \           
+  or province == 'Nunavut':                     
+  tax = 0.05                         
+elif province == 'Ontario':          
+  tax = 0.13                         
+else:                                
+  tax = 0.15                         
+  
+
+How OR statements are processed
+-----------------------------------------------------------
+| 1st condition  | 2nd condition | Condition evaluates as |
+-----------------------------------------------------------
+| True           | True          | True                   |
+| True           | False         | True                   | 
+| False          | True          | True                   |
+| False          | False         | False                  |
+-----------------------------------------------------------
+
+////////////////////////////////////////////////////////////////////////////
+
+- Calculate Canadian sales tax 
+  * if the province is Alberta, Nunavut or Yukon charge 5%
+  * if the province is Ontario charge 13%
+  * for all other provinces charge 15%
+  
+  
+if province in('Alberta', \ 
+               'Nunavut', 'Yukon ):                               
+  tax = 0.05                         
+elif province == 'Ontario':          
+  tax = 0.13                         
+else:                                
+  tax = 0.15
+  
+////////////////////////////////////////////////////////////////////////////
+
+- Calculate Canadian sales tax for canadian residents
+  * if the province is Alberta, Nunavut or Yukon charge 5%
+  * if the province is Ontario charge 13%
+  * for all other provinces charge 15%
+  Non canadian residents do not pay sales tax
+  
+
+if country == 'Canada':
+  if province in('Alberta', \ 
+                 'Nunavut', 'Yukon ):                               
+    tax = 0.05                         
+  elif province == 'Ontario':          
+    tax = 0.13                         
+  else:                                
+    tax = 0.15
+else:
+  tax = 0.0
+  
+////////////////////////////////////////////////////////////////////////////
+
+province = input("what province do you live  in ? ")
+tax = 0
+
+if province == 'Alberta':
+  tax = 0.05
+if province == 'Nunavut':
+  tax = 0.05
+if province == 'Ontario':
+  tax = 0.13
+print(tax)
+
+
+---> what province do you live  in ?  #for example Alberta
+---> 0.05
+---> what province do you live  in ?  #for example Nunavut
+---> 0.05
+---> what province do you live  in ?  #for example Ontario
+---> 0.13
+
+////////////////////////////////////////////////////////////////////////////
+
+province = input("what province do you live  in ? ")
+tax = 0
+
+if province == 'Alberta':
+  tax = 0.05
+elif province == 'Nunavut':
+  tax = 0.05
+elif province == 'Ontario':
+  tax = 0.13
+print(tax)
+
+
+---> what province do you live  in ?  #for example Alberta
+---> 0.05
+---> what province do you live  in ?  #for example Nunavut
+---> 0.05
+---> what province do you live  in ?  #for example Ontario
+---> 0.13
+---> what province do you live  in ?  #for example Quebec
+---> 0
+
+////////////////////////////////////////////////////////////////////////////
+
+province = input("what province do you live  in ? ")
+tax = 0
+
+if province == 'Alberta':
+  tax = 0.05
+elif province == 'Nunavut':
+  tax = 0.05
+elif province == 'Ontario':
+  tax = 0.13
+else:
+  tax = 0.15
+print(tax)
+
+
+---> what province do you live  in ?  #for example Quebec
+---> 0.15
+
+////////////////////////////////////////////////////////////////////////////
+
+province = input("what province do you live  in ? ")
+tax = 0
+
+if province == 'Alberta' or province == 'Nunavut':                     
+  tax = 0.05                         
+elif province == 'Ontario':          
+  tax = 0.13                         
+else:                                
+  tax = 0.15 
+print(tax)
+
+
+---> what province do you live  in ?  #for example Alberta
+---> 0.05
+---> what province do you live  in ?  #for example Nunavut
+---> 0.05
+---> what province do you live  in ?  #for example Ontario
+---> 0.13
+---> what province do you live  in ?  #for example Quebec
+---> 0.15
+
+////////////////////////////////////////////////////////////////////////////
+
+province = input("what province do you live  in ? ")
+tax = 0
+
+if province in('Alberta', 'Nunavut', 'Yukon ):                               
+  tax = 0.05                         
+elif province == 'Ontario':          
+  tax = 0.13                         
+else:                                
+  tax = 0.15
+print(tax)
+
+
+---> what province do you live  in ?  #for example Alberta
+---> 0.05
+---> what province do you live  in ?  #for example Nunavut
+---> 0.05
+---> what province do you live  in ?  #for example Ontario
+---> 0.13
+---> what province do you live  in ?  #for example Quebec
+---> 0.15
+
+////////////////////////////////////////////////////////////////////////////
+
+country = input("what country do you live  in ? ")
+
+if country == 'Canada':
+  province = input("what province do you live  in ? ")
+  if province in('Alberta',\
+                 'Nunavut','Yukon'):                               
+                  tax = 0.05                         
+  elif province == 'Ontario':          
+    tax = 0.13                         
+  else:                                
+    tax = 0.15
+else:
+  tax = 0.0
+print(tax)
+
+
+---> what country do you live  in ?  #for example Canada
+---> what province do you live  in ?  #for example Alberta
+---> 0.05
+---> what country do you live  in ?  #for example Canada
+---> what province do you live  in ?  #for example Yukon
+---> 0.05
+---> what country do you live  in ?  #for example Canada
+---> what province do you live  in ?  #for example Ontario
+---> 0.13
+---> what country do you live  in ?  #for example Morocco
+---> 0.0
+
+___________________________________________________________________________
+___________________________________________________________________________  8. Complex condition checks
+
+Requirement for honour roll
+* Minimum 85% grade point average
+* Lowest grade is at least 70%
+
+1.
+
+if gpa >= .85:
+  if lowest_grade >= .70:
+    print('Well done')
+  
+2.
+
+if gpa >= .85  and  lowest_grade >= .70:
+  print('Well done')
+  
+  
+How AND statements are processed
+-----------------------------------------------------------
+| 1st condition  | 2nd condition | Condition evaluates as |
+-----------------------------------------------------------
+| True           | True          | True                   |
+| True           | False         | False                  | 
+| False          | True          | False                  |
+| False          | False         | False                  |
+-----------------------------------------------------------
+
+////////////////////////////////////////////////////////////////////////////
+
+if you need to remember the results of a condition check later in your
+code , use Boolean variable as flags
+
+if gpa >= .85  and  lowest_grade >= .70:
+  honour_roll = True 
+else:
+  honour_roll = False 
+  
+#Somewhere later in your code 
+
+if honour_roll :
+  print('Well done')
+  
+////////////////////////////////////////////////////////////////////////////
+
+* A student makes honour roll if their average is >= 85
+* and their lowest grade is not below 75
+
+gpa = float(input('What was your Grade Point Average ? '))
+lowest_grade = float(input('What was your lowest grade ? '))
+lowest_grade = float(lowest_grade)
+
+if gpa >= .85:
+    if lowest_grade >= .70:
+      print('You made the honour roll')
+      
+      
+---> What was your Grade Point Average ?  #for example .90
+---> What was your lowest grade ? #for example .80
+---> You made the honour roll
+
+////////////////////////////////////////////////////////////////////////////
+
+gpa = float(input('What was your Grade Point Average ? '))
+lowest_grade = float(input('What was your lowest grade ? '))
+lowest_grade = float(lowest_grade)
+
+if gpa >= .85  and  lowest_grade >= .70:
+  print('You made the honour roll')
+  
+  
+---> What was your Grade Point Average ?  #for example .90
+---> What was your lowest grade ? #for example .86
+---> You made the honour roll
+
+////////////////////////////////////////////////////////////////////////////
+
+gpa = float(input('What was your Grade Point Average ? '))
+lowest_grade = float(input('What was your lowest grade ? '))
+lowest_grade = float(lowest_grade)
+
+if gpa >= .85  and  lowest_grade >= .70:
+  honour_roll = True
+else:
+  honour_roll = False
+
+if honour_roll: 
+  print('You made honour roll')
+  
+  
+---> What was your Grade Point Average ?  #for example .95
+---> What was your lowest grade ? #for example .82
+---> You made the honour roll
